@@ -1,0 +1,6 @@
+flake8 
+pylint 
+black 
+bandit 
+pip-audit 
+pytest
