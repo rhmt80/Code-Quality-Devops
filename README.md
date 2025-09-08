@@ -1,45 +1,59 @@
-# Code-Quality-Devops
-Python Code Quality and CI/CD Pipeline
+# Code-Quality-DevOps
 
-# Python Code Quality and CI/CD Pipeline
+![Python](https://img.shields.io/badge/Python-3.9%20|%203.10%20|%203.11-blue)
+![GitHub Actions](https://img.shields.io/badge/CI-CD-GitHub%20Actions-orange)
+![SonarCloud](https://img.shields.io/badge/Code%20Quality-SonarCloud-brightgreen)
+
+---
 
 ## Overview
 
-This project is a **Python Code Quality Pipeline** that automatically performs static code analysis, security scanning, and testing, integrated with **GitHub Actions** and **SonarCloud**.  
-The pipeline ensures that Python code is **maintainable, secure, and compatible across multiple Python versions** (3.9, 3.10, 3.11).
+**Code-Quality-DevOps** is a **Python Code Quality and CI/CD Pipeline** project that automates:
 
-It is designed to enforce coding standards, catch bugs early, and provide continuous feedback through **SonarCloud dashboards**.
+- Static code analysis  
+- Security scanning  
+- Unit testing  
+
+It is integrated with **GitHub Actions** and **SonarCloud**, ensuring your Python code is:
+
+- Maintainable  
+- Secure  
+- Compatible across multiple Python versions (3.9, 3.10, 3.11)  
+
+The pipeline enforces coding standards, catches bugs early, and provides continuous feedback through **SonarCloud dashboards**.
 
 ---
 
 ## Features
 
-- **Static Code Analysis**
-  - `flake8` for PEP8 compliance and style issues
-  - `pylint` for detecting errors, code smells, and enforcing coding standards
-  - `black` (optional) for automatic code formatting
+### 1. Static Code Analysis
+- **Flake8:** Checks PEP8 compliance and style issues  
+- **Pylint:** Detects errors, code smells, and enforces coding standards  
+- **Black (optional):** Automatically formats code according to style rules  
 
-- **Security Scan**
-  - `bandit` scans Python code for common security vulnerabilities
+### 2. Security Scan
+- **Bandit:** Scans Python code for common security vulnerabilities  
 
-- **Unit Testing**
-  - `pytest` runs tests across multiple Python versions
-  - Test results are stored in `junit` folder and can be uploaded as artifacts
+### 3. Unit Testing
+- **Pytest:** Runs tests across multiple Python versions  
+- Stores results in the `junit/` folder, which can be uploaded as artifacts in CI  
 
-- **CI/CD Integration**
-  - Fully automated GitHub Actions workflow
-  - Multi-version Python testing (3.9, 3.10, 3.11)
-  - SonarCloud integration for code quality metrics
+### 4. CI/CD Integration
+- Fully automated **GitHub Actions workflow**  
+- Multi-version Python testing (3.9, 3.10, 3.11)  
+- SonarCloud integration for code quality metrics  
 
-- **Code Quality Dashboard**
-  - SonarCloud provides detailed insights:
-    - Bugs, vulnerabilities, and code smells
-    - Test coverage (if integrated)
-    - Code duplication and complexity
+### 5. Code Quality Dashboard
+- SonarCloud provides detailed insights including:
+  - Bugs, vulnerabilities, and code smells  
+  - Test coverage (if integrated)  
+  - Code duplication and complexity  
+
+---
 
 ## Project Structure
 
----code_quality2/
+- code_quality2/
 ├─ my_module/
 │ └─ calculator.py # Main Python module with functions
 ├─ tests/
@@ -51,17 +65,19 @@ It is designed to enforce coding standards, catch bugs early, and provide contin
 ├─ requirements.txt # Python dependencies
 └─ README.md # Project documentation
 
-- **GitHub Actions Workflow**
+---
 
-- Runs automatically on push or pull request to the main branch.
-- Steps include:
- - Checkout code
- - Setup Python (3.9, 3.10, 3.11)
- - Install dependencies
- - Lint with Flake8 & Pylint
- - Optional Black formatting check
- - Security scan with Bandit
- - Run tests with Pytest
- - Upload results and analyze with SonarCloud
+## GitHub Actions Workflow
 
+The CI/CD pipeline runs automatically on **push** or **pull request** to the `main` branch.  
+**Workflow steps include:**
+
+1. Checkout code  
+2. Setup Python environments (3.9, 3.10, 3.11)  
+3. Install dependencies from `requirements.txt`  
+4. Lint code using **Flake8** and **Pylint**  
+5. Optional code formatting check using **Black**  
+6. Security scan with **Bandit**  
+7. Run unit tests with **Pytest**  
+8. Upload results and analyze code quality with **SonarCloud**
 
