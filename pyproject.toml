@@ -1,11 +1,9 @@
-# pyproject.toml
-[tool.pylint.'MESSAGES CONTROL']
-disable = C0114, C0115, C0116 # Disable missing module/class/function docstrings if needed temporarily
+[tool.pylint."MESSAGES CONTROL"]
+disable = ["C0114", "C0115", "C0116"]  # Must be a list of strings
 
 [tool.pylint.format]
 max-line-length = 88
 
-# pyproject.toml (add this section if using black)
 [tool.black]
 line-length = 88
-target-version = ['py38', 'py39', 'py310', 'py311', 'py312'] # Specify Python versions you target
+target-version = ["py38", "py39", "py310", "py311", "py312"]
