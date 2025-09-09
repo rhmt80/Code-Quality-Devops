@@ -34,6 +34,9 @@ jobs:
       - name: Run pylint
         run: pylint my_module/ tests/ || true   # don’t fail pipeline on warnings
 
+      - name: Run Black formatting check
+        run: black --check .
+
       - name: Run Bandit security scan
         run: bandit -r . -ll
 
@@ -59,5 +62,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # needed for PR checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # needed for PR decoration
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
